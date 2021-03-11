@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import './App.css';
-import axios from 'axios';
 import CatalogContainer from './Components/CatalogContainer/CatalogContainer';
 
 function App() {

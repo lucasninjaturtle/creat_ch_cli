@@ -2,9 +2,9 @@ import React, {Fragment, useState} from 'react';
 import styles from './filterscontainer.module.css'
 
 
-const FiltersContainer = ({handleCleanFilters, value, count, sortProducts})=>{
+const FiltersContainer = ({handleCleanFilters, value, sortProducts})=>{
 
-   count = 100;
+   let count = 100;
     return(
         <Fragment>
             <div className="d-flex justify-content-between align-items-center p-2">

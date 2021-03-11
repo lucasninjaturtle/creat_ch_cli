@@ -1,0 +1,49 @@
+.productCard {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 0;
+    margin: 1rem 2rem;
+    width: 15rem;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: 1rem;
+    max-height: 12rem;
+    width: auto;
+}
+
+.productImg {
+    border: none;
+    padding: none;
+    max-height: 10rem;
+    width: auto;
+}
+
+.bodyContainer {
+    display: flex;
+    flex-direction: column;
+    float: none;
+}
+
+.titleBody {
+    font-weight: 600;
+    margin: 0;
+}
+
+.priceBody {
+    margin: 0.5em;
+}
+
+.stockBody{
+    margin-bottom: 0.5em;
+}
+
+.starAverage {
+    margin: 0;
+    margin-bottom: 0.5em;
+}
