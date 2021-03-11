@@ -6,7 +6,7 @@ const FiltersContainer = ()=>{
 
     return(
         <div>
-            Filter Container
+            Filters Container
         </div>
     )};
 
