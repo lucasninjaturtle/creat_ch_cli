@@ -37,24 +37,27 @@ console.log(prod)
 // PRODUCT SORT
 
     const [sort, setSort] = useState('')
+    const [sortSize, setSortSize] = useState('')
+    const [sortPrice, setSortPrice] = useState('')
+    const [sortId, setSortId] = useState('')
 
     const sortProducts = event => {
         setSort(event.target.value) 
     }
 
-    let sortProductos = () => {
-    let aux = sort
-    if(sort === 'Low price - Ascendant'){
+    let sortProductPrice = () => {
+    let aux = sortPrice
+    if(sortPrice === 'Ascendant'){
         return aux.sort((a,b) => parseFloat(a.price) - parseFloat(b.price))
     }
-    if(sort === 'High price - Descendant'){
+    if(sortPrice === 'Descendant'){
         return aux.sort((a,b) => parseFloat(b.price) - parseFloat(a.price))
     }
     return aux
 } 
 
 
-    
+
 
     return(
         <Fragment>
@@ -68,14 +71,17 @@ console.log(prod)
                                 <h2 className={`m-0 text-center p-5`}>Look and Sort our amazing EMOJIS!! </h2>
                                 <div className={`col-10  ${styles.catalogSearchBar}`}>
                                     <FiltersContainer 
-                                    
-                                        count={sort.length}
                                         sortProducts={sortProducts}
+                                        count={sort.length}
+                                        setSortSize={sortProducts}
+                                        setSortPrice={sortProducts}
+                                        setSortId={sortProducts}
+
                                     />
                                 </div>
                                 <div className={`col-12 p-2`}>
                                     <Catalog     
-                                        products={sortProductos()}
+                                        productsPrice={sortProductPrice()}
                                     />
                                 </div>
                         </div>
