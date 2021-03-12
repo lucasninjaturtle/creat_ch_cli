@@ -5,11 +5,10 @@ const ProductCard = ({ id, size, price, face, date })=>{
 
 
     return(
-        <div className={`${styles.productCard} card`}>
-      <div className={`${styles.imgContainer}`}>
-        {face? 
-
         <div>
+      <div>
+        {face? 
+        <div style={{height: size, padding:'30px', color:'black', backgroundColor: "white"}}>
             {face}
             </div>
         :
@@ -22,13 +21,12 @@ const ProductCard = ({ id, size, price, face, date })=>{
           
         
       </div>
-      <div className={`${styles.bodyContainer} card-body`}>
-        <h5 className={`${styles.titleBody} card-title`}>id: {id}</h5>
+      <div className={`${styles.bodyContainer}`}>
+        <h4 style={{margin: '1em'}}>id: {id}</h4>
         <hr/>
-        <span className={`${styles.priceBody} card-text`}>Price: ${price}</span>
+        <h2 className={`${styles.priceBody}`}>Price: ${price}</h2>
         
         
-        <button>ADD</button>
       </div>
     </div>
     )};

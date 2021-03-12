@@ -7,10 +7,12 @@ function App() {
  
   return (
     <div className="App">
-      <div> Hello ascii emoji world</div>
 
 
       <CatalogContainer/>
+      <div>
+        
+      </div>
     </div>
   );
 }

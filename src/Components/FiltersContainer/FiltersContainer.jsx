@@ -8,7 +8,6 @@ const FiltersContainer = ({handleChange})=>{
    let count = 100;
     return(
         <Fragment>
-            <div className="d-flex justify-content-between align-items-center p-2">
                 <div className={`${styles.searchBarContainer}`}>
                     <div>
                         <span className={`${styles.counterSpan}`}>
@@ -29,7 +28,6 @@ const FiltersContainer = ({handleChange})=>{
                     </select>
                 </div>
 
-            </div>
         </Fragment>
     )};
 

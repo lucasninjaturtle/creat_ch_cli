@@ -33,3 +33,20 @@
     padding: 2rem;
     width: 100%;
 }
+
+.ProductCard {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: flex-start;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 10px;
+    font-family: Arial,Helvetica,sans-serif;
+    background: rgb(144,150,154);
+background: radial-gradient(circle, rgba(144,150,154,0.8407738095238095) 0%, rgba(255,255,255,1) 100%);
+border-top-color: #f5f5ef;
+font-weight:'bold'
+}
+
+

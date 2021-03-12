@@ -1,35 +1,43 @@
-import React, {useState} from 'react';
-import ProductCard from '../ProductCard/ProductCard'
-import Spinner from '../Spinner/Spinner';
-import styles from './catalog.module.css'
+import React, { Fragment, useState } from "react";
+import ProductCard from "../ProductCard/ProductCard";
+import Spinner from "../Spinner/Spinner";
+import styles from "./catalog.module.css";
 
 // Styles
-import {Content} from './Catalog.styles'
+import { Content } from "./Catalog.styles";
 
-const Catalog = ({prod, handleScroll, loading})=>{
+//SPINNER
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import Loader from "react-loader-spinner";
 
-    
-    return(
-        <>
-        <Content onScroll={handleScroll}>
-    {prod.map(product=> 
-                        <li id= 'menu'>
-                            <ProductCard
-                            key={product.id}
-                            id = {product.id}
-                            name = {product.name}
-                            size = {product.size}
-                            price = {product.price}
-                            date = {product.date}
-                            face = {product.face}
-                            />
-                        </li>
-                        )}
+const Catalog = ({ prod, handleScroll, loading }) => {
+  return (
+    <>
+      <Content onScroll={handleScroll}>
+        {prod.map((product) => (
+          <div className={styles.ProductCard}>
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              size={product.size}
+              price={product.price}
+              date={product.date}
+              face={product.face}
+            />
+          </div>
+        ))}
       </Content>
-      
-      {loading && <Spinner/>}
-      </>
-    )};
 
+      {loading && <Loader
+        type="TailSpin"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={3000} //3 secs
+      />}
+    </>
+  );
+};
 
 export default Catalog;

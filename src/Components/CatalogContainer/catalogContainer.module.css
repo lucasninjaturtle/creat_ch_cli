@@ -1,6 +1,8 @@
 .catalogContainer{
-    display: flex;
-    flex-direction: column;
+    display:flex;
+    flex-wrap: wrap;
+    border: 100px;
+    flex-direction: row;
     align-items: center;
     padding-left: 0;
     padding-right: 0;
@@ -8,11 +10,11 @@
 }
 
 .catalogSearchBar{
-    border: 1px solid  #a17e30;
-    border-radius: 5px;
+    margin:50px;
+    border-radius: 10px;
     background-color: #fff;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 #menu li{
     list-style-type: none;

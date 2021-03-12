@@ -2,11 +2,11 @@ import styled from 'styled-components';
 
 export const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: auto;
-  height: 800px;
-  margin: 0 auto;
+  grid-template-columns: repeat(2, 30em) ;
+  padding:3em;
+  height: 450px;
+  margin: auto;
   overflow: auto;
-  marginBottom: 10px;
+  grid-gap: 10px;
 `;
 
