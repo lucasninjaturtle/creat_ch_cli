@@ -1,42 +1,35 @@
 import React, {useState} from 'react';
 import ProductCard from '../ProductCard/ProductCard'
+import Spinner from '../Spinner/Spinner';
 import styles from './catalog.module.css'
 
+// Styles
+import { Content, Loading } from '../CatalogContainer/CatalogContainer.styles';
 
-const Catalog = ({products})=>{
+const Catalog = ({prod, handleScroll})=>{
 
-console.log(products)
-
+    const [loading, setLoading] = useState(true);
+    
     return(
-        <div className={`${styles.catalogContainer}`}>
-        <div className='Catalog'>
-            {products.length === 0 ? 
-                <p className={`${styles.aviso}`}>
-                    Empty Catalog
-                </p>
-            :
-                <>
-                    <hr/>
-                    <div className={`${styles.catalog}`}>
-                        {products.map(product=> 
-                        <div>
+        <>
+        <Content onScroll={handleScroll}>
+    {prod.map(product=> 
+                        <li id= 'menu'>
                             <ProductCard
                             key={product.id}
                             id = {product.id}
                             name = {product.name}
-                            description = {product.description}
+                            size = {product.size}
                             price = {product.price}
-                            stock = {product.stock}
-                            imgs = {product.imgs}
+                            date = {product.date}
+                            face = {product.face}
                             />
-                        </div>
+                        </li>
                         )}
-                    </div>
-                    
-                </>           
-            }
-        </div>
-    </div>
+      </Content>
+      
+      {loading && <Loading>Loading ...</Loading>}
+      </>
     )};
 
 

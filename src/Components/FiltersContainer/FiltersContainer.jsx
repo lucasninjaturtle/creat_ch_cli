@@ -2,8 +2,9 @@ import React, {Fragment, useState} from 'react';
 import styles from './filterscontainer.module.css'
 
 
-const FiltersContainer = ({handleCleanFilters, value, sortProducts})=>{
+const FiltersContainer = ({handleChange})=>{
 
+    
    let count = 100;
     return(
         <Fragment>
@@ -17,50 +18,17 @@ const FiltersContainer = ({handleCleanFilters, value, sortProducts})=>{
                     
                 </div>
                 <div className={`${styles.precioContainer}`}>
-                    <span>Price: </span>
+                    <span>Sort by: </span>
                     <select 
                         className={`${styles.precioSearchbar} form-control`}
-                        onChange={sortProducts}
+                        onChange={handleChange}
                     >
-                        <option>Price</option>
-                        <option value="Ascendant">Ascendant</option>
-                        <option value="Descendant">Descendant</option>
+                        <option value="price">Price</option>
+                        <option value="size">Size</option>
+                        <option value="id">ID</option>
                     </select>
                 </div>
 
-                <div className={`${styles.precioContainer}`}>
-                    <span>Size: </span>
-                    <select 
-                        className={`${styles.precioSearchbar} form-control`}
-                        onChange={sortProducts}
-                    >
-                        <option>Size</option>
-                        <option value="Ascendant">Ascendant</option>
-                        <option value="Descendant">Descendant</option>
-                    </select>
-                </div>
-
-                <div className={`${styles.precioContainer}`}>
-                    <span>Id: </span>
-                    <select 
-                        className={`${styles.precioSearchbar} form-control`}
-                        onChange={sortProducts}
-                    >
-                        <option>Id</option>
-                        <option value="Ascendant">Ascendant</option>
-                        <option value="Descendant">Descendant</option>
-                    </select>
-                </div>
-                
-                <div className={`${styles.trashButtonContainer}`}>
-                    <button 
-                        className={`btn ${styles.trashButton}`} 
-                        onClick={handleCleanFilters}
-                        >
-                        DELETE FILTER
-                        
-                    </button>
-                </div>
             </div>
         </Fragment>
     )};

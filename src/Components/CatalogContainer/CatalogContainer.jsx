@@ -8,86 +8,93 @@ import axios from 'axios'
 import Spinner from '../Spinner/Spinner'
 import FiltersContainer from '../FiltersContainer/FiltersContainer'
 import Catalog from '../Catalog/Catalog'
+import {getProd} from './FetchFunc'
+import ProductCard from '../ProductCard/ProductCard'
+
+// Styles
+import { Content, Loading } from './CatalogContainer.styles';
 
 
 const CatalogContainer = ()=>{
 
- // DATA FETCH
-
+ 
+const [sort, setSort] = useState('price')
  const[prod, setProd] = useState([])
+ const [page, setPage] = useState(1);
+ const [loading, setLoading] = useState(true);
 
-  useEffect(()=>{
-    axios.get('http://localhost:3002/products?_page=10&_limit=15')
-    .then(res => {
-        setProd(res.data)
-
-    })
-},[])
-
-console.log(prod)
-
-//SPINNER TEST
-
-    let spineron = false;
+// HOW MUCH ITEMS *PER* page
+const per = 20
 
 
-    
+//HANDLE INFINITE SCROLL
+
+const handleScroll = (event) => {
+    const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
+    if (scrollHeight - scrollTop === clientHeight) {
+      setPage(prev => prev + 1);
+    }
+  };
+
+// DATA FETCH
+
+
+useEffect(() => {
+    const loadProd = async () => {
+      setLoading(true);
+      const newProd = await getProd(page, per, sort);
+      setProd((prev) => [...prev, ...newProd]);
+      setLoading(false);
+      console.log(prod)
+    };
+    loadProd();
+  }, [page, sort]);
+
+
+
 
 
 // PRODUCT SORT
 
-    const [sort, setSort] = useState('')
-    const [sortSize, setSortSize] = useState('')
-    const [sortPrice, setSortPrice] = useState('')
-    const [sortId, setSortId] = useState('')
+    
+    
 
-    const sortProducts = event => {
-        debugger
-        setSort(event.target.value) 
-    }
+    
 
-    let sortedProduct = () => {
-    let aux = prod
-    if(sort === 'Ascendant'){
-        return aux.sort((a,b) => parseFloat(a.price) - parseFloat(b.price))
-    }
-    if(sort === 'Descendant'){
-        return aux.sort((a,b) => parseFloat(b.price) - parseFloat(a.price))
-    }
-    return aux
-} 
+    // ONCHANGE FROM FILTER
 
+const handleChange = (event) =>{
+    setSort(event.target.value)
+    setProd([])
+  }
+  
 
+  
 
 
     return(
         <Fragment>
-            {spineron ? 
-                <Spinner />
-
-                
-                    :
+            
                     <div >
                         <div className = {`${styles.catalogContainer}`}>
                                 <h2 className={`m-0 text-center p-5`}>Look and Sort our amazing EMOJIS!! </h2>
                                 <div className={`col-10  ${styles.catalogSearchBar}`}>
                                     <FiltersContainer 
-                                        sortProducts={sortProducts}
-                                        // count={sort.length}
-                                        // setSortSize={sortProducts}
-                                        // setSortPrice={sortProducts}
-                                        // setSortId={sortProducts}
+                                        handleChange={handleChange}
 
                                     />
                                 </div>
                                 <div className={`col-12 p-2`}>
-                                    <Catalog     
-                                        products={sortedProduct()}
+                                    <Catalog
+                                    handleScroll={handleScroll}
+                                    // products={sortedProduct()}
+                                    prod={prod}
                                     />
+    
                                 </div>
                         </div>
                     </div>
-            }
+            
         </Fragment>
     )};
 
