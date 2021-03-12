@@ -4,11 +4,10 @@ import Spinner from '../Spinner/Spinner';
 import styles from './catalog.module.css'
 
 // Styles
-import { Content, Loading } from '../CatalogContainer/CatalogContainer.styles';
+import {Content} from './Catalog.styles'
 
-const Catalog = ({prod, handleScroll})=>{
+const Catalog = ({prod, handleScroll, loading})=>{
 
-    const [loading, setLoading] = useState(true);
     
     return(
         <>
@@ -28,7 +27,7 @@ const Catalog = ({prod, handleScroll})=>{
                         )}
       </Content>
       
-      {loading && <Loading>Loading ...</Loading>}
+      {loading && <Spinner/>}
       </>
     )};
 

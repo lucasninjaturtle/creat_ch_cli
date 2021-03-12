@@ -10,8 +10,3 @@ export const Content = styled.div`
   marginBottom: 10px;
 `;
 
-export const Loading = styled.div`
-  width: 200px;
-  margin: 20px auto;
-  text-align: center;
-`;

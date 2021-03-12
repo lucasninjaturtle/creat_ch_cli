@@ -9,10 +9,8 @@ import Spinner from '../Spinner/Spinner'
 import FiltersContainer from '../FiltersContainer/FiltersContainer'
 import Catalog from '../Catalog/Catalog'
 import {getProd} from './FetchFunc'
-import ProductCard from '../ProductCard/ProductCard'
 
-// Styles
-import { Content, Loading } from './CatalogContainer.styles';
+
 
 
 const CatalogContainer = ()=>{
@@ -52,15 +50,6 @@ useEffect(() => {
 
 
 
-
-
-// PRODUCT SORT
-
-    
-    
-
-    
-
     // ONCHANGE FROM FILTER
 
 const handleChange = (event) =>{
@@ -89,6 +78,7 @@ const handleChange = (event) =>{
                                     handleScroll={handleScroll}
                                     // products={sortedProduct()}
                                     prod={prod}
+                                    loading={loading}
                                     />
     
                                 </div>
