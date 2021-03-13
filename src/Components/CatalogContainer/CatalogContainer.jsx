@@ -42,14 +42,24 @@ const CatalogContainer = () => {
     loadProd();
 
     if(prod.length > 0) setCount(prod.length+20)
+    return () => {
+        setLoading()
+        setSort()
+
+    }
   }, [page, sort]);
 
   // ONCHANGE FROM FILTER
+
+
+
 
   const handleChange = (event) => {
     setSort(event.target.value);
     setProd([]);
   };
+
+
 
   return (
     <Fragment>
@@ -70,7 +80,6 @@ const CatalogContainer = () => {
               prod={prod}
               loading={loading}
             />
-            <script>document.write('<img class="ad" src="/ads/?r=' + Math.floor(Math.random()*1000) + '"/>');</script>
           </div>
         </div>
       

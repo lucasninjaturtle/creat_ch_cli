@@ -10,8 +10,13 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 
 const Catalog = ({ prod, handleScroll, loading }) => {
+ 
+  let image;
+  image = Math.floor(Math.random()*1000)
+
   return (
     <>
+
       <Content onScroll={handleScroll}>
         {prod.map((product) => (
           <div className={styles.ProductCard}>
@@ -27,6 +32,8 @@ const Catalog = ({ prod, handleScroll, loading }) => {
           </div>
         ))}
       </Content>
+      {
+      <img class="ad" src={`http://localhost:3002/ads/?r=${image}`}/>}
 
       {loading && <Loader
         type="Audio"
