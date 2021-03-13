@@ -2,10 +2,10 @@ import React, {Fragment, useState} from 'react';
 import styles from './filterscontainer.module.css'
 
 
-const FiltersContainer = ({handleChange})=>{
+const FiltersContainer = ({handleChange, count})=>{
 
     
-   let count = 100;
+   
     return(
         <Fragment>
                 <div className={`${styles.searchBarContainer}`}>

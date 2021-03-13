@@ -9,19 +9,20 @@ import Catalog from "../Catalog/Catalog";
 import { getProd } from "./FetchFunc";
 
 const CatalogContainer = () => {
+   
   const [sort, setSort] = useState("price");
   const [prod, setProd] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [count, setCount] = useState(20)
 
-  // HOW MUCH ITEMS *PER* page
-  const per = 20;
+   // HOW MUCH ITEMS *PER* page
+   const per = 20;
 
   //HANDLE INFINITE SCROLL
 
   const handleScroll = (event) => {
     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
-    console.log(event)
     if (scrollHeight - scrollTop === clientHeight) {
       setPage((prev) => prev + 1);
     }
@@ -36,8 +37,11 @@ const CatalogContainer = () => {
       setProd((prev) => [...prev, ...newProd]);
       setLoading(false);
       console.log(prod);
+      
     };
     loadProd();
+
+    if(prod.length > 0) setCount(prod.length+20)
   }, [page, sort]);
 
   // ONCHANGE FROM FILTER
@@ -49,13 +53,13 @@ const CatalogContainer = () => {
 
   return (
     <Fragment>
-      <div>
-        <div className={`${styles.catalogContainer}`}>
-          <h1 style={{color:'black', padding:'30px', backgroundColor:'white', border:'10px'}}>
-            Look and Sort our amazing EMOJIS!!{" "}
+      
+        <div className={styles.catalogContainer}>
+          <h1 style={{color:'black', padding:'30px', backgroundColor:'white', border:'10px', fontFamily:'DejaVu Sans Mono, monospace'}}>
+            Look and Sort our amazing EMOJIS
           </h1>
           <div className={`col-10  ${styles.catalogSearchBar}`}>
-            <FiltersContainer handleChange={handleChange} />
+            <FiltersContainer count={count} handleChange={handleChange} />
           </div>
           <div className={`col-12 p-2`}>
             <Catalog
@@ -64,9 +68,10 @@ const CatalogContainer = () => {
               prod={prod}
               loading={loading}
             />
+            <script>document.write('<img class="ad" src="/ads/?r=' + Math.floor(Math.random()*1000) + '"/>');</script>
           </div>
         </div>
-      </div>
+      
     </Fragment>
   );
 };
