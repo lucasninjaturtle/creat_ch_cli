@@ -15,6 +15,7 @@ const CatalogContainer = () => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
   const [count, setCount] = useState(20)
+  
 
    // HOW MUCH ITEMS *PER* page
    const per = 20;
@@ -36,7 +37,6 @@ const CatalogContainer = () => {
       const newProd = await getProd(page, per, sort);
       setProd((prev) => [...prev, ...newProd]);
       setLoading(false);
-      console.log(prod);
       
     };
     loadProd();
@@ -75,6 +75,7 @@ const CatalogContainer = () => {
           </div>
           
             <Catalog
+            
               handleScroll={handleScroll}
               // products={sortedProduct()}
               prod={prod}
