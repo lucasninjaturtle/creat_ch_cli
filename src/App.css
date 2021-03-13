@@ -6,7 +6,6 @@
 .App {
   text-align: center;
   padding-bottom: 200px;
-  display:flex;
 }
 
 .App-logo {
@@ -42,4 +41,8 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media (max-width: 750px) {
+  #gri { grid-template-columns: repeat(1, 1fr); }
 }

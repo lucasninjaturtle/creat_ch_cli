@@ -22,7 +22,7 @@ const Catalog = ({ prod, handleScroll, loading }) => {
     <p >But first, a word from our sponsors:</p>
     </div>
        {<img style={{margin:'20px'}} class="ad" src={`http://localhost:3002/ads/?r=${image}`}/>}
-      <Content onScroll={handleScroll}>
+      <Content id='gri' onScroll={handleScroll}>
         {prod.map((product) => (
           <div className={styles.ProductCard}>
             <ProductCard

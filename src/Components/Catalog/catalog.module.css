@@ -54,7 +54,6 @@ font-weight:'bold'
 
 
 .ProductCard2 {
-    display: flex;
     flex-wrap: wrap;
     align-content: center;
     align-items: flex-start;
@@ -71,3 +70,4 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
 font-weight:'bold';
 font-family: DejaVu Sans Mono, monospace;
 }
+
