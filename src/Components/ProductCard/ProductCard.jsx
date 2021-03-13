@@ -6,15 +6,14 @@ const ProductCard = ({ id, size, price, face, date })=>{
 
     return(
         <div>
-      <div>
+      <div className={face}>
         {face? 
-        <div style={{height: size, padding:'30px', color:'black', backgroundColor: "white"}}>
+        <div style={{height: size, padding:'10px', color:'black', backgroundColor: "transparent"}}>
             {face}
             </div>
         :
         <img
         src={'https://s3.amazonaws.com/f6s-public/profiles/1690030_original.jpg'}
-        className={`${styles.productImg} img-thumbnail`}
       />
     
     }

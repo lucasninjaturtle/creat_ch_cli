@@ -10,12 +10,32 @@
 }
 
 .catalogSearchBar{
-    margin:1px;
+    margin:15px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color:transparent;
     padding-left: 4rem;
     padding-right: 4rem;
+    background: rgba( 219, 198, 198, 0.20 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4.5px );
+-webkit-backdrop-filter: blur( 4.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 #menu li{
     list-style-type: none;
   }
+
+.title{
+    color:'black';
+     padding:'30px';
+      background-color:'transparent';
+       border:'10px';
+       font-family:'DejaVu Sans Mono, monospace';
+       background: rgba( 219, 198, 198, 0.20 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4.5px );
+-webkit-backdrop-filter: blur( 4.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

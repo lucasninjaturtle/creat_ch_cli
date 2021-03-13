@@ -55,10 +55,12 @@ const CatalogContainer = () => {
     <Fragment>
       
         <div className={styles.catalogContainer}>
-          <h1 style={{color:'black', padding:'30px', backgroundColor:'white', border:'10px', fontFamily:'DejaVu Sans Mono, monospace'}}>
+            <div className={styles.title}>
+          <h1  style={{color:'#00509d', padding:'30px', backgroundColor:'transparent', border:'10px', fontFamily:'DejaVu Sans Mono, monospace'}}>
             Look and Sort our amazing EMOJIS
           </h1>
-          <div className={`col-10  ${styles.catalogSearchBar}`}>
+          </div>
+          <div style={{color:'#00509d'}} className={styles.catalogSearchBar}>
             <FiltersContainer count={count} handleChange={handleChange} />
           </div>
           <div className={`col-12 p-2`}>

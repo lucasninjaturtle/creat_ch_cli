@@ -36,6 +36,7 @@
 
 .priceBody {
     margin: 0.5em;
+
 }
 
 .stockBody{
@@ -49,4 +50,10 @@
 
 #menu{
     padding:20px;
+}
+
+.face{
+    padding:'10px';
+     color:'black';
+     background-color: "transparent";
 }

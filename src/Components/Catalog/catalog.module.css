@@ -43,9 +43,12 @@
     padding: 2rem;
     border-radius: 10px;
     font-family: Arial,Helvetica,sans-serif;
-    background: rgb(144,150,154);
-background: radial-gradient(circle, rgba(144,150,154,0.8407738095238095) 0%, rgba(255,255,255,1) 100%);
-border-top-color: #f5f5ef;
+    background: rgba( 219, 198, 198, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
 font-weight:'bold'
 }
 
