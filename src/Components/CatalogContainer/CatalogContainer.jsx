@@ -18,7 +18,7 @@ const CatalogContainer = () => {
   
 
    // HOW MUCH ITEMS *PER* page
-   const per = 20;
+   const per = 0;
 
   //HANDLE INFINITE SCROLL
 
@@ -26,6 +26,7 @@ const CatalogContainer = () => {
     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
     if (scrollHeight - scrollTop === clientHeight) {
       setPage((prev) => prev + 1);
+      if(prod.length > 0) setCount(count+20)
     }
   };
 
@@ -41,7 +42,6 @@ const CatalogContainer = () => {
     };
     loadProd();
 
-    if(prod.length > 0) setCount(prod.length)
     return () => {
         setSort()
         setPage()
