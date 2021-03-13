@@ -41,10 +41,10 @@ const CatalogContainer = () => {
     };
     loadProd();
 
-    if(prod.length > 0) setCount(prod.length+20)
+    if(prod.length > 0) setCount(prod.length)
     return () => {
-        setLoading()
         setSort()
+        setPage()
 
     }
   }, [page, sort]);
@@ -73,14 +73,14 @@ const CatalogContainer = () => {
           <div style={{color:'#00509d'}} className={styles.catalogSearchBar}>
             <FiltersContainer count={count} handleChange={handleChange} />
           </div>
-          <div className={`col-12 p-2`}>
+          
             <Catalog
               handleScroll={handleScroll}
               // products={sortedProduct()}
               prod={prod}
               loading={loading}
             />
-          </div>
+          
         </div>
       
     </Fragment>

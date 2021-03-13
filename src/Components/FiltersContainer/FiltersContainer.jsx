@@ -8,14 +8,13 @@ const FiltersContainer = ({handleChange, count})=>{
    
     return(
         <Fragment>
-                <div className={`${styles.searchBarContainer}`}>
-                    <div>
+                
+                    {/* <div>
                         <span className={`${styles.counterSpan}`}>
                             ({count}){count === 1 ? ' Product' : ' Products'}
                         </span>
-                    </div>
+                    </div> */}
                     
-                </div>
                 <div className={`${styles.precioContainer}`}>
                     <span>Sort by: </span>
                     <select 

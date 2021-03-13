@@ -12,11 +12,16 @@ import Loader from "react-loader-spinner";
 const Catalog = ({ prod, handleScroll, loading }) => {
  
   let image;
+  let nextImg ;
   image = Math.floor(Math.random()*1000)
+  nextImg = image +1
 
   return (
     <>
-
+    <div className={styles.ProductCard2}>
+    <p >But first, a word from our sponsors:</p>
+    </div>
+       {<img style={{margin:'20px'}} class="ad" src={`http://localhost:3002/ads/?r=${image}`}/>}
       <Content onScroll={handleScroll}>
         {prod.map((product) => (
           <div className={styles.ProductCard}>
@@ -29,19 +34,23 @@ const Catalog = ({ prod, handleScroll, loading }) => {
               date={product.date}
               face={product.face}
             />
+            <div id='sponsors'></div>
           </div>
+          
         ))}
       </Content>
-      {
-      <img class="ad" src={`http://localhost:3002/ads/?r=${image}`}/>}
-
       {loading && <Loader
         type="Audio"
         color="#00BFFF"
         height={50}
         width={50}
         timeout={3000} //3 secs
+        
       />}
+     
+      
+
+      
     </>
   );
 };
